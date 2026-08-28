@@ -1,0 +1,19 @@
+{
+  "name": "steamuitest",
+  "version": "1.0.0",
+  "description": "Steam UI autotests — TypeScript + Playwright pet project",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "author": "depedence",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.4.0",
+    "allure-js-commons": "^3.11.0",
+    "allure-playwright": "^3.11.0",
+    "dotenv": "^17.4.2",
+    "typescript": "^7.0.2"
+  }
+}

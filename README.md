@@ -108,12 +108,6 @@ The project includes a `Jenkinsfile` for a declarative Jenkins Pipeline. Unlike 
 
 ---
 
-### Note on the "Cart" tests
-
-The original Python project tested add/remove/clear cart scenarios. Steam now requires an authenticated session to modify the cart, and automating login through the UI is deliberately avoided (risk of CAPTCHA / Steam Guard / bot detection). Instead, this project tests an equivalent stateful CRUD-like scenario that doesn't require authentication: adding, removing, and clearing tag filters on the store search page.
-
----
-
 ### License
 
 Distributed under the MIT License.

@@ -1,34 +1,45 @@
 pipeline {
-    agent {
-        docker {
-            image 'mcr.microsoft.com/playwright:v1.48.0-jammy'
-            args '--ipc=host'
-        }
-    }
+    agent none
 
     stages {
         stage('Checkout') {
+            agent any
             steps {
                 checkout scm
+                stash includes: '**', name: 'source'
             }
         }
 
-        stage('Install dependencies') {
-            steps {
-                sh 'npm ci'
+        stage('Install & Test') {
+            agent {
+                docker {
+                    image 'mcr.microsoft.com/playwright:v1.48.0-jammy'
+                    args '--ipc=host'
+                }
             }
-        }
-
-        stage('Test') {
             steps {
+                unstash 'source'
+                retry(3) {
+                    sh 'npm ci'
+                }
                 sh 'npx playwright test'
+                stash includes: 'allure-results/**', name: 'allure-results'
+            }
+        }
+
+        stage('Report') {
+            agent any
+            steps {
+                unstash 'allure-results'
             }
         }
     }
 
     post {
         always {
-            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+            node('') {
+                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+            }
         }
     }
 }

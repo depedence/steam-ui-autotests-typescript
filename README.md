@@ -19,7 +19,9 @@ TypeScript/Playwright-порт пет-проекта [Steam_UI_autotests](https:
 
 ### Used Tools
 
-<img title="TypeScript" src="screenshots/icons/typescript.svg" height="40" width="40"/> <img title="Node.js" src="screenshots/icons/nodejs.svg" height="40" width="40"/> <img title="Playwright" src="screenshots/icons/playwright.svg" height="40" width="40"/> <img title="npm" src="screenshots/icons/npm.svg" height="40" width="40"/> <img title="GitHub" src="screenshots/icons/github.svg" height="40" width="40"/> <img title="Docker" src="screenshots/icons/docker.svg" height="40" width="40"/> <img title="VS Code" src="screenshots/icons/vscode.svg" height="40" width="40"/> <img title="Jenkins" src="screenshots/icons/jenkins-original.svg" height="40" width="40"/> <img title="Allure" src="screenshots/icons/allure.svg" height="40" width="40"/>
+<img title="TypeScript" src="screenshots/icons/typescript.png" height="40" width="40"/> <img title="Node.js" src="screenshots/icons/nodejs.svg" height="40" width="40"/> <img title="Playwright" src="screenshots/icons/playwright.svg" height="40" width="40"/> <img title="npm" src="screenshots/icons/npm.svg" height="40" width="40"/> <img title="GitHub" src="screenshots/icons/github.png" height="40" width="40"/> <img title="Docker" src="screenshots/icons/docker.png" height="40" width="40"/> <img title="VS Code" src="screenshots/icons/vscode.png" height="40" width="40"/> <img title="Jenkins" src="screenshots/icons/jenkins.svg" height="40" width="40"/>
+
+<!-- <img title="Allure" src="screenshots/icons/allure.svg" height="40" width="40"/> -->
 
 ---
 
@@ -79,7 +81,7 @@ Jenkinsfile
 
 The project includes a `Jenkinsfile` for a declarative Jenkins Pipeline. Unlike the Java/Selenide version, no separate browser grid (Selenoid) is required — the pipeline runs tests directly inside the official `mcr.microsoft.com/playwright` Docker image, which already ships with all required browsers.
 
-![jenkins pipeline result](screenshots/Jenkins_pipeline.png)
+![jenkins pipeline result](screenshots/pipeline.png)
 
 #### Pipeline stages
 
@@ -94,15 +96,15 @@ The project includes a `Jenkinsfile` for a declarative Jenkins Pipeline. Unlike 
 
 #### Overall result
 
-![allure_report main page](screenshots/Allure_Report.png)
+![allure_report main page](screenshots/allure_report.png)
 
 #### Test results with screenshots, video and trace
 
-![allure_report test details](screenshots/Test_results.png)
+![allure_report test details](screenshots/test_results.png)
 
 #### Graphs
 
-![allure_report graph](screenshots/Allure_graphics.png)
+![allure_report graph](screenshots/allure_graphics.png)
 
 ---
 

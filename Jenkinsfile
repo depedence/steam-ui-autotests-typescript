@@ -13,7 +13,7 @@ pipeline {
         stage('Install & Test') {
             agent {
                 docker {
-                    image 'mcr.microsoft.com/playwright:v1.48.0-jammy'
+                    image 'mcr.microsoft.com/playwright:v1.62.1-jammy'
                     args '--ipc=host'
                 }
             }
